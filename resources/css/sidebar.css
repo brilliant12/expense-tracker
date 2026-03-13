@@ -1,0 +1,163 @@
+
+.main-sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #007bff; 
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+/* Closed state for mobile */
+.main-sidebar.closed {
+  transform: translateX(-100%);
+}
+
+/* Sidebar nav */
+.nav-sidebar {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  /* padding: 10px 15px; */
+  color:white;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-link.active {
+  background-color: #131414 !important;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-link p {
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    font-family: cursive;
+    font-size: 15px;
+    font-weight: 400;
+}
+.navbar-dark {
+    background: #007bff;
+}
+
+/* Icons */
+.nav-icon {
+  margin-right: 10px;
+}
+
+/* Treeview submenu */
+.nav-treeview {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.nav-item.menu-open > .nav-treeview {
+  display: block;
+}
+
+.nav-treeview .nav-link {
+  font-size: 13px;
+  padding: 8px 15px;
+}
+
+/* Toggle arrow */
+.nav-link .right {
+  margin-left: auto;
+}
+
+/* Content wrapper */
+.content-wrapper {
+  margin-left: 250px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Header */
+.main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  /* background-color: #007bff; */
+  color: white;
+}
+
+
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  color: white;
+  padding: 5px 0;
+}
+
+
+.toggle-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+ 
+.top_menu .dropdown {
+  
+    right: 0% !important
+}
+}
+
+
+@media (max-width: 768px) {
+  .main-sidebar {
+    width: 200px;
+  }
+
+  .content-wrapper {
+    margin-left: 0;
+  }
+
+  .wrapper.sidebar-open .main-sidebar {
+    transform: translateX(0);
+  }
+
+  .content-wrapper.sidebar-open {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-sidebar {
+    width: 180px;
+  }
+
+  .content-wrapper.sidebar-open {
+    margin-left: 180px;
+  }
+}

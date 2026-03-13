@@ -1,0 +1,59 @@
+.sidebar-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.col-md-3 label{
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+input.form-control{
+   border: 1px solid rgb(152, 150, 150);
+   margin: 2px;
+}
+select.form-select{
+border: 1px solid rgb(152, 150, 150);
+}
+
+
+@media (max-width: 991px) {
+  .sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1050;
+  }
+
+  .sidebar-wrapper.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1040;
+  }
+}
+.dashboard-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.dashboard-card i {
+    transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover i {
+    transform: scale(1.1);
+}

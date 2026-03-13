@@ -1,0 +1,106 @@
+/* Style for Cards with Enhanced Shadow */
+.card-shadow {
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadows */
+    border-radius: 8px; /* Rounded corners for modern feel */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.card-shadow:hover {
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        0 4px 6px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow */
+}
+
+/* Additional styling for card bodies */
+/* Title Style */
+.title {
+    font-family:
+        "Roboto", sans-serif; /* You can use any font family you like */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #007bff;
+    position: relative;
+    padding-top: 10px; /* Add some padding above the content */
+    padding-bottom: 5px; /* Add some padding below the content */
+    border-bottom: 2px solid #007bff; /* Add a 2px underline with the same color */
+    border-radius: 5px;
+}
+.main-content {
+    padding: 1em;
+}
+.badge {
+    padding-bottom: 7px;
+}
+.das_box {
+    border: 1px dashed #00000042;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+.das_data {
+    text-align: right;
+}
+.dashboard-card {
+    border-radius: 12px;
+    background: #fff;
+    color: #333;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.top_menu .dropdown {
+    position: absolute;
+    right: 0;
+    z-index: 9999;
+    right: 19%;
+}
+.dashboard-header {
+   display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.dashboard-card .value {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card .icon {
+    font-size: 20px;
+    fill: #dc3545;
+}
+
+.dashboard-card .label {
+    font-size: 13px;
+    color: #777;
+}
+.difference-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.data-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+}
+
+.data-table-wrapper table {
+    min-width: 1000px; /* force wider table so scroll appears */
+}
