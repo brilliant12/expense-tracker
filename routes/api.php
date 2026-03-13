@@ -78,6 +78,8 @@ Route::middleware(['secure.api', 'auth:admin-api'])->group(function () {
     Route::get('admin/group_wise_users_list/{id}', [AdminDashboardController::class, 'groupWiseUsersList']);
 });
 
+Route::post('admin/logout',[AdminDashboardController::class,'logout'])->middleware('auth:admin-api');
+
 
 Route::any('/__test', function () {
     return response()->json(['api' => 'working']);

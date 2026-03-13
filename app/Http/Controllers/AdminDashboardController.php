@@ -6,12 +6,14 @@ use App\Models\Expense;
 use App\Models\Group;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
+
 
 class AdminDashboardController extends Controller
 {
     public function dashboard(Request $request)
-    {
+    {  
         $totalUsers   = User::count();
         $totalGroups  = Group::count();
         $totalExpenses = Expense::count();
@@ -107,5 +109,20 @@ public function groupWiseUsersList($id)
     ]);
 }
 
+   public function logout(Request $request)
+    {
+         if (!$request->user()) {
+        return response()->json([
+            'success' => false,
+            'message' => 'User is not authenticated. Please log in.',
+        ], 401); // Unauthorized
+    }
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Logged out successfully'
+        ]);
+    }
 
 }

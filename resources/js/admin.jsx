@@ -8,7 +8,7 @@ import "../css/admin/sidebar.css";
 // import "../css/app.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import { AuthProvider } from "../context/AdminAuthContext";
 
 // Lazy load admin components
 const AdminLogin = lazy(() => import("../components/admin/AdminLogin"));
@@ -27,6 +27,7 @@ const PrivateRoute = lazy(() => import("../components/admin/PrivateRoute"));
 
 function AdminApp() {
   return (
+     <AuthProvider>
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
         <Toaster
@@ -64,6 +65,7 @@ function AdminApp() {
         </Routes>
       </Suspense>
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 

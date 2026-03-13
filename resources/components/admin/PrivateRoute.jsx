@@ -1,10 +1,11 @@
 import { Navigate, Outlet } from "react-router-dom";
-
+import { useContext } from "react";
+import { AuthContext } from "../../context/AdminAuthContext";
 const PrivateRoute = () => {
-  const token = localStorage.getItem("admin_token");
+ const { token } = useContext(AuthContext);
 
   // If authenticated → allow access
-  return token ? <Outlet /> : <Navigate to="admin/login/" replace />;
+  return token ? <Outlet /> : <Navigate to="/admin/login" replace />;
 };
 
 export default PrivateRoute;

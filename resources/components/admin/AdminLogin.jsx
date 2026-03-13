@@ -3,10 +3,13 @@ import { adminAPI } from "../../api/adminAPI.js";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { EncryptPayload, DecryptResponse } from "../../js/EncryptPayload.js";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AdminAuthContext.jsx";
 function AdminLogin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+     const { setToken, setAdmin } = useContext(AuthContext);
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
@@ -24,14 +27,12 @@ function AdminLogin() {
                 console.log(decrypted);
                 setTimeout(() => {
                     navigate("/admin/dashboard");
-                }, 1000);
+                }, 100);
 
                 toast.success("Login successful!");
+                setToken(decrypted.data.token);
+                setAdmin(decrypted.data.user);
 
-                localStorage.setItem(
-                    "admin_token",
-                    decrypted.data?.token ?? decrypted.token,
-                );
             } else {
                 toast.error(decrypted.message || "something went wrong");
             }
